@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>en</string>
+	<key>CFBundleDisplayName</key>
+	<string>GoGetAPet</string>
+	<key>CFBundleExecutable</key>
+	<string>$(EXECUTABLE_NAME)</string>
+	<key>CFBundleIdentifier</key>
+	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>$(PRODUCT_NAME)</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>$(MARKETING_VERSION)</string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>fb1137130360274197</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLIconFile</key>
+			<string></string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.googleusercontent.apps.1052310868832-ap3p05din4okcm2hovr306rnmuci5mdh</string>
+			</array>
+			<key>item 0</key>
+			<string>com.googleusercontent.apps.1052310868832-ap3p05din4okcm2hovr306rnmuci5mdh</string>
+		</dict>
+		<dict/>
+	</array>
+	<key>CFBundleVersion</key>
+	<string>$(CURRENT_PROJECT_VERSION)</string>
+	<key>FacebookAppID</key>
+	<string>1137130360274197</string>
+	<key>FacebookClientToken</key>
+	<string>0ffa6eb2f4f275c3a03440c87644dc42</string>
+	<key>FacebookDisplayName</key>
+	<string>GogetaPet</string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>fbapi</string>
+		<string>fb-messenger-share-api</string>
+		<string>fbauth2</string>
+		<string>fbshareextension</string>
+	</array>
+	<key>LSRequiresIPhoneOS</key>
+	<true/>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSExceptionDomains</key>
+		<dict>
+			<key>localhost</key>
+			<dict>
+				<key>NSExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+			</dict>
+		</dict>
+	</dict>
+	<key>NSCameraUsageDescription</key>
+	<string>This app will use camera to capture picture's for post.</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>GoGetapet uses your location to help you find the nearby pet's seller or buyer and more.</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>GoGetapet uses your location to help you find the nearby pet's seller or buyer and more.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>GoGetapet uses your location to help you find the nearby pet's seller or buyer and more.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>App Requires access to your photo library to let you browse your albums to use in Posts.</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Poppins-Black.ttf</string>
+		<string>Poppins-BlackItalic.ttf</string>
+		<string>Poppins-Bold.ttf</string>
+		<string>Poppins-BoldItalic.ttf</string>
+		<string>Poppins-ExtraBold.ttf</string>
+		<string>Poppins-ExtraBoldItalic.ttf</string>
+		<string>Poppins-ExtraLight.ttf</string>
+		<string>Poppins-ExtraLightItalic.ttf</string>
+		<string>Poppins-Italic.ttf</string>
+		<string>Poppins-Light.ttf</string>
+		<string>Poppins-LightItalic.ttf</string>
+		<string>Poppins-Medium.ttf</string>
+		<string>Poppins-MediumItalic.ttf</string>
+		<string>Poppins-Regular.ttf</string>
+		<string>Poppins-SemiBold.ttf</string>
+		<string>Poppins-SemiBoldItalic.ttf</string>
+		<string>Poppins-Thin.ttf</string>
+		<string>Poppins-ThinItalic.ttf</string>
+	</array>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>fetch</string>
+		<string>remote-notification</string>
+	</array>
+	<key>UILaunchStoryboardName</key>
+	<string>LaunchScreen</string>
+	<key>UIRequiredDeviceCapabilities</key>
+	<array>
+		<string>armv7</string>
+	</array>
+	<key>UISupportedInterfaceOrientations</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+		<string>UIInterfaceOrientationLandscapeLeft</string>
+		<string>UIInterfaceOrientationLandscapeRight</string>
+	</array>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<false/>
+</dict>
+</plist>

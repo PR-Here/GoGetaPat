@@ -1,0 +1,63 @@
+{
+  "identifier" : "0538F8F2",
+  "nonRenewingSubscriptions" : [
+    {
+      "displayPrice" : "29.99",
+      "familyShareable" : false,
+      "internalID" : "F583C527",
+      "localizations" : [
+        {
+          "description" : "Unlimited access for $29.99 a year",
+          "displayName" : "Unlimited access for $29.99",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "unlimited_access_for_1year",
+      "referenceName" : "Unlimited access for 1 year",
+      "type" : "NonRenewingSubscription"
+    },
+    {
+      "displayPrice" : "9.99",
+      "familyShareable" : false,
+      "internalID" : "A627065A",
+      "localizations" : [
+        {
+          "description" : "Boost your Ad for 30 days for $9.99",
+          "displayName" : "Boost your Ad for $9.99",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "boost_ad_30",
+      "referenceName" : "boost Ads 30 days",
+      "type" : "NonRenewingSubscription"
+    },
+    {
+      "displayPrice" : "3",
+      "familyShareable" : false,
+      "internalID" : "5EC9B4C4",
+      "localizations" : [
+        {
+          "description" : "Boost your Ad for 7 days for $3",
+          "displayName" : "Boost your Ad for $3",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "boost_ad_for_7days",
+      "referenceName" : "boost ad for 7days",
+      "type" : "NonRenewingSubscription"
+    }
+  ],
+  "products" : [
+
+  ],
+  "settings" : {
+
+  },
+  "subscriptionGroups" : [
+
+  ],
+  "version" : {
+    "major" : 1,
+    "minor" : 1
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1052310868832",
+    "project_id": "gogetapet-4e50c",
+    "firebase_url": "https://gogetapet-4e50c-default-rtdb.firebaseio.com",
+    "storage_bucket": "gogetapet-4e50c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1052310868832:android:1b0768a130605a82658405",
+        "android_client_info": {
+          "package_name": "com.gopets4u"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1052310868832-3e0o0vkh63c0p8qev8hut29l5hkok1o6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDZLyvBUUwlM26sNd5b5xzp0BMBmBn5AV4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1052310868832-3e0o0vkh63c0p8qev8hut29l5hkok1o6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
