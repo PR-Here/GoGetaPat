@@ -28,7 +28,7 @@ import PushNotificationIOS from "@react-native-community/push-notification-ios";
 import { firebase } from "@react-native-firebase/dynamic-links";
 import PushNotification from "react-native-push-notification";
 import { useDispatch, useSelector } from "react-redux";
-import { MAP_API_KEY, themeColor } from "../common/common";
+import { MAP_API_KEY, fontRegular, themeColor } from "../common/common";
 import { getAppLaunchLink } from "../common/helper";
 import { useAuthState } from "../contexts/authContext";
 import { useHomeDispatch, useHomeState } from "../contexts/HomeContext";
@@ -299,7 +299,8 @@ const SearchByLoc = ({
     )
       .then((respon) => respon.json())
       .then((results) => {
-        const { lat, lng } = results.results[0].geometry.location;
+        console.log(results);
+        const { lat, lng } = results?.results[0]?.geometry?.location;
         if (lat && lng) {
           setLati(lat);
           setLogni(lng);
@@ -308,6 +309,7 @@ const SearchByLoc = ({
         }
       })
       .catch((error) => {
+        console.log(error);
         dispatchHome({ type: "Loading", payload: false });
         customToastMsg("Not able to locate you. Please enter a valid ZIP Code");
       });
@@ -351,9 +353,16 @@ const SearchByLoc = ({
                       <TextInput
                         value={zipCode.toString()}
                         placeholder="Enter ZIP Code"
-                        style={{ backgroundColor: "#ddd", padding: wp(4.5) }}
+                        style={{
+                          backgroundColor: "#ddd",
+                          paddingHorizontal: 10,
+                          height: 50,
+                          fontFamily: fontRegular,
+                          borderRadius:5
+                        }}
                         maxLength={6}
                         keyboardType={"number-pad"}
+                        returnKeyType="done"
                         onChangeText={(value) => {
                           setZipCode(value);
                         }}
@@ -1175,8 +1184,6 @@ const HomeScreen = ({ navigation, route }) => {
       />
 
       {showLoader(stateHome)}
-
-      
     </SafeAreaView>
   );
 };

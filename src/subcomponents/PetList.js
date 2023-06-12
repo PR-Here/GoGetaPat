@@ -138,6 +138,24 @@ function PetList({
       });
   };
 
+  const loginAlertPopup = () => {
+    Alert.alert(
+      "Access Denied",
+      "Please login to access this functionality.",
+      [
+        {
+          text: "Cancel",
+          onPress: () => console.log("Cancel Pressed"),
+        },
+        {
+          text: "Login",
+          onPress: () => navigation.navigate("SignIn"),
+        },
+      ],
+      { cancelable: false }
+    );
+  };
+
   return (
     <FlatList
       data={postList}
@@ -206,9 +224,11 @@ function PetList({
                     style={{
                       flexDirection: "row",
                       width: "100%",
-                      top: width / 4,
+                      // top: width / 4,
                       justifyContent: "flex-start",
                       alignItems: "flex-end",
+                      bottom:3,
+                      position:'absolute'
                     }}
                   >
                     <View
@@ -236,21 +256,7 @@ function PetList({
                                 item.like_post
                               );
                             } else {
-                              // Alert.alert(
-                              //   "Access Denied",
-                              //   "Please login to access this functionality.",
-                              //   [
-                              //     {
-                              //       text: "Cancel",
-                              //       onPress: () => console.log("Cancel Pressed"),
-                              //     },
-                              //     {
-                              //       text: "Login",
-                              //       onPress: () => navigation.navigate("SignIn"),
-                              //     },
-                              //   ],
-                              //   { cancelable: false }
-                              // );
+                              // loginAlertPopup();
                             }
                           }}
                         >
@@ -286,21 +292,7 @@ function PetList({
                                 item.like_post
                               );
                             } else {
-                              // Alert.alert(
-                              //   "Access Denied",
-                              //   "Please login to access this functionality.",
-                              //   [
-                              //     {
-                              //       text: "Cancel",
-                              //       onPress: () => console.log("Cancel Pressed"),
-                              //     },
-                              //     {
-                              //       text: "Login",
-                              //       onPress: () => navigation.navigate("SignIn"),
-                              //     },
-                              //   ],
-                              //   { cancelable: false }
-                              // );
+                              // loginAlertPopup();
                             }
                           }}
                         >
@@ -337,21 +329,7 @@ function PetList({
                               postId: item?.id,
                             });
                           } else {
-                            // Alert.alert(
-                            //   "Access Denied",
-                            //   "Please login to access this functionality.",
-                            //   [
-                            //     {
-                            //       text: "Cancel",
-                            //       onPress: () => console.log("Cancel Pressed"),
-                            //     },
-                            //     {
-                            //       text: "Login",
-                            //       onPress: () => navigation.navigate("SignIn"),
-                            //     },
-                            //   ],
-                            //   { cancelable: false }
-                            // );
+                            // loginAlertPopup();
                           }
                         }}
                         style={styles.commentButton}

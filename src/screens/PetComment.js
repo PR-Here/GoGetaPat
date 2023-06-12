@@ -20,7 +20,12 @@ import {
 } from "react-native-responsive-screen";
 import customToastMsg from "../subcomponents/CustomToastMsg";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scrollview";
-import { fontBold, themeColor, headerColor } from "../common/common";
+import {
+  fontBold,
+  themeColor,
+  headerColor,
+  fontRegular,
+} from "../common/common";
 import { useAuthState } from "../contexts/authContext";
 import moment from "moment";
 
@@ -113,8 +118,8 @@ export default function PetComment({ navigation, route }) {
 
   const scrollToBottom = () => {
     if (flatListRef.current) {
-        flatListRef.current.scrollToEnd();
-      }
+      flatListRef.current.scrollToEnd();
+    }
   };
 
   const scrollToTop = () => {
@@ -125,7 +130,11 @@ export default function PetComment({ navigation, route }) {
 
   // console.log(postId, authState?.loginedUser?.id);
   return (
-    <KeyboardAvoidingView style={{ flex: 1 }} behavior="padding">
+    <KeyboardAvoidingView
+      behavior={Platform.OS === "ios" ? "padding" : null}
+      style={{ flex: 1 }}
+      contentContainerStyle={styles.contentContainer}
+    >
       <SafeAreaView style={styles.container}>
         {/* Header */}
         <View style={styles.top_Header}>
@@ -144,34 +153,50 @@ export default function PetComment({ navigation, route }) {
           <Text style={styles.commentText}>Comments</Text>
         </View>
         {/* List */}
-        <FlatList
-          ref={flatListRef}
-          bounces={true}
-          showsVerticalScrollIndicator={false}
-          data={data}
-          ListFooterComponent={<View style={{ marginBottom: 80 }}></View>}
-          renderItem={({ item, index }) => {
-            return (
-              <View style={styles.commentView}>
-                <Image
-                  style={styles.profileImage}
-                  source={{
-                    uri: item?.profile_image,
-                  }}
-                />
-                <View style={styles.nameView}>
-                  <Text style={styles.userName}>{item?.name}</Text>
-                  <Text style={styles.commentTextDesc}>
-                    {item?.comment_text}
-                  </Text>
-                  <Text style={styles.timeText}>
-                    {moment(item?.created_at).format("D MMM hh:mm A")}
-                  </Text>
+        {data == "" ? (
+          <View
+            style={{ flex: 1, alignItems: "center", justifyContent: "center" }}
+          >
+            <Text
+              style={{
+                textAlign: "center",
+                fontFamily: fontRegular,
+                fontSize: 18,
+              }}
+            >
+              No Comment.
+            </Text>
+          </View>
+        ) : (
+          <FlatList
+            ref={flatListRef}
+            bounces={true}
+            showsVerticalScrollIndicator={false}
+            data={data}
+            ListFooterComponent={<View style={{ marginBottom: 80 }}></View>}
+            renderItem={({ item, index }) => {
+              return (
+                <View style={styles.commentView}>
+                  <Image
+                    style={styles.profileImage}
+                    source={{
+                      uri: item?.profile_image,
+                    }}
+                  />
+                  <View style={styles.nameView}>
+                    <Text style={styles.userName}>{item?.name}</Text>
+                    <Text style={styles.commentTextDesc}>
+                      {item?.comment_text}
+                    </Text>
+                    <Text style={styles.timeText}>
+                      {moment(item?.created_at).format("D MMM hh:mm A")}
+                    </Text>
+                  </View>
                 </View>
-              </View>
-            );
-          }}
-        />
+              );
+            }}
+          />
+        )}
         {/* TextInput */}
         <View style={styles.inputView}>
           <TextInput
@@ -265,7 +290,7 @@ const styles = StyleSheet.create({
     alignSelf: "center",
     justifyContent: "space-evenly",
     backgroundColor: "white",
-    padding:10
+    padding: 10,
   },
   commentView: {
     flexDirection: "row",
@@ -303,11 +328,16 @@ const styles = StyleSheet.create({
     textAlign: "right",
     marginTop: 10,
     color: "grey",
-    fontFamily:'Poppins-Regular'
+    fontFamily: "Poppins-Regular",
   },
   scrollViewContent: {
     flexGrow: 1,
     justifyContent: "center",
     padding: 20,
+  },
+  contentContainer: {
+    flex: 1,
+    justifyContent: "flex-end",
+    marginBottom: 16, // Adjust the bottom margin as needed
   },
 });
