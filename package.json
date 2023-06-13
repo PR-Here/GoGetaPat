@@ -11,7 +11,8 @@
     "pod": "cd ios && pod install && cd ..",
     "build:ios": "react-native bundle --entry-file='index.js' --bundle-output='./ios/main.jsbundle' --dev=false --platform='ios'",
     "build": "npx react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res && cd android/ && ./gradlew assembleDebug && cd ..",
-    "pod": "cd ios && pod install && cd .."
+    "pod": "cd ios && pod install && cd ..",
+    "release":"cd android && ./gradlew bundleRelease"
   },
   "dependencies": {
     "@invertase/react-native-apple-authentication": "^2.2.2",
