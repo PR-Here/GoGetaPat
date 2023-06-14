@@ -85,7 +85,7 @@ function PetList({
     AsyncStorage.getItem("loginValue").then((loginValueCheck) => {
       const response = JSON.parse(loginValueCheck);
       setLoginValue(response);
-      // console.log("---loginValueCheck---",response);
+      console.log("---loginValueCheck---",response);
     });
     setPostList(fullPostData);
     // console.log("---fullPostData.length---", fullPostData[2]);

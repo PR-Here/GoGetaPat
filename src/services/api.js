@@ -48,6 +48,7 @@ export async function login(idToken, state, dispatch) {
   })
     .then((response) => response.json())
     .then((response) => {
+      console.log(response);
       if (response.accessToken) {
         auth = response.accessToken;
       }
@@ -93,6 +94,7 @@ export async function boostposts(id, days, navigation) {
     days: days,
   };
 
+  console.log("Boost post url ... >>>>>>>>>>>>>>    ", boost, id, days);
   return await fetch(boost, {
     method: "POST",
     headers: {
@@ -529,6 +531,7 @@ export const fetchTestFilterPost = (
   //   stringHere = stringHere + `&max_price=${max}`;
   // }
 
+  console.log("pet list url... ", stringHere.toString());
   fetch(stringHere.toString(), {
     method: "GET",
     headers: {
@@ -699,7 +702,7 @@ export const fetchSinglePost = (setFullData, setImages, id, dispatchHome) => {
   })
     .then((res) => res.json())
     .then((res) => {
-      // console.log("----res?.data----",res?.data)
+      console.log("----res?.data----", tempStr, auth);
       setFullData(res?.data);
       setImages([
         ...res?.data?.cover_image,

@@ -887,9 +887,9 @@ const PostScreen = ({ navigation, route }) => {
     }
   };
 
-  tempYearName = fullData.ageYear > 1 ? " Yrs" : " Yr";
-  tempWeekName = fullData.ageWeek > 1 ? " W" : " W";
-  tempMonthName = fullData.ageMonth > 1 ? " Mo" : " Mo";
+  tempYearName = fullData?.ageYear > 1 ? " Yrs" : " Yr";
+  tempWeekName = fullData?.ageWeek > 1 ? " W" : " W";
+  tempMonthName = fullData?.ageMonth > 1 ? " Mo" : " Mo";
 
   const { latitude, longitude } = fullData;
   return (
@@ -1050,9 +1050,9 @@ const PostScreen = ({ navigation, route }) => {
               ]}
             >
               {fullData.sex &&
-              fullData.category_id != 5 &&
-              fullData.category_id != 6 &&
-              fullData.category_id != 8 ? (
+              fullData?.category_id != 5 &&
+              fullData?.category_id != 6 &&
+              fullData?.category_id != 8 ? (
                 <>
                   <View style={styles.row}>
                     <Text style={styles.TextGray}>Sex</Text>
@@ -1060,7 +1060,7 @@ const PostScreen = ({ navigation, route }) => {
                   </View>
                 </>
               ) : null}
-              {fullData.ageYear || fullData.ageMonth || fullData.ageWeek ? (
+              {fullData?.ageYear || fullData?.ageMonth || fullData?.ageWeek ? (
                 <>
                   {fullData.sex ? (
                     <View
@@ -1070,26 +1070,26 @@ const PostScreen = ({ navigation, route }) => {
                   <View style={styles.row}>
                     <Text style={styles.TextGray}>Age</Text>
                     <Text style={styles.TextBlue}>
-                      {fullData.ageYear ? fullData.ageYear + tempYearName : ""}
-                      {fullData.ageMonth
-                        ? " " + fullData.ageMonth + tempMonthName
+                      {fullData?.ageYear ? fullData?.ageYear + tempYearName : ""}
+                      {fullData?.ageMonth
+                        ? " " + fullData?.ageMonth + tempMonthName
                         : ""}
-                      {fullData.ageWeek
-                        ? " " + fullData.ageWeek + tempWeekName
+                      {fullData?.ageWeek
+                        ? " " + fullData?.ageWeek + tempWeekName
                         : ""}
                     </Text>
                   </View>
                 </>
               ) : null}
-              {fullData.weight ? (
+              {fullData?.weight ? (
                 <>
                   {fullData.sex ? (
                     <View
                       style={[styles.BorderRight, { marginHorizontal: wp(4) }]}
                     ></View>
-                  ) : fullData.ageYear ||
-                    fullData.ageMonth ||
-                    fullData.ageWeek ? (
+                  ) : fullData?.ageYear ||
+                    fullData?.ageMonth ||
+                    fullData?.ageWeek ? (
                     <View
                       style={[styles.BorderRight, { marginHorizontal: wp(4) }]}
                     ></View>
@@ -1097,7 +1097,7 @@ const PostScreen = ({ navigation, route }) => {
                   <View style={styles.row}>
                     <Text style={styles.TextGray}>Weight</Text>
                     <Text style={styles.TextBlue}>
-                      {parseFloat(fullData.weight)} lbs
+                      {parseFloat(fullData?.weight)} lbs
                     </Text>
                   </View>
                 </>
@@ -1151,7 +1151,7 @@ const PostScreen = ({ navigation, route }) => {
               <TouchableOpacity
                 style={{ flexDirection: "row", flex: 1, alignItems: "center" }}
                 onPress={() => {
-                  navigation.navigate("Profile", { userId: fullData.user.id });
+                  navigation.navigate("Profile", { userId: fullData?.user.id });
                 }}
               >
                 <Image
@@ -1166,13 +1166,13 @@ const PostScreen = ({ navigation, route }) => {
                 />
                 <View style={{ flex: 1, padding: 12 }}>
                   <Text style={styles.chat_Name}>
-                    {fullData.user && fullData.user.name}
+                    {fullData?.user && fullData?.user.name}
                   </Text>
                   <Text style={styles.chat_Message} numberOfLines={1}>
                     Pet Owner
                   </Text>
                   <Text style={styles.lastScene} numberOfLines={1}>
-                    {fullData.user && fullData.user.address}
+                    {fullData?.user && fullData?.user.address}
                   </Text>
                 </View>
               </TouchableOpacity>
@@ -1194,7 +1194,7 @@ const PostScreen = ({ navigation, route }) => {
           <View style={styles.DescriptionContainer}>
             <Text style={styles.Description}>Description</Text>
             <Text style={styles.DescriptionContent}>
-              {fullData.description ? fullData.description : null}
+              {fullData?.description ? fullData?.description : null}
             </Text>
           </View>
 
@@ -1204,7 +1204,7 @@ const PostScreen = ({ navigation, route }) => {
                 <TouchableOpacity
                   onPress={() => {
                     authState.userToken
-                      ? savePost(fullData.id, setHeart)
+                      ? savePost(fullData?.id, setHeart)
                       : setPopup(true);
                   }}
                   style={styles.ButtonStyle}
@@ -1256,7 +1256,7 @@ const PostScreen = ({ navigation, route }) => {
             <View style={styles.buttonStyleView}>
               <TouchableOpacity
                 style={styles.ButtonStyle}
-                onPress={() => handleShare(fullData.id)}
+                onPress={() => handleShare(fullData?.id)}
               >
                 <Image
                   style={styles.Buttonicon}
