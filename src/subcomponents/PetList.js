@@ -85,7 +85,7 @@ function PetList({
     AsyncStorage.getItem("loginValue").then((loginValueCheck) => {
       const response = JSON.parse(loginValueCheck);
       setLoginValue(response);
-      console.log("---loginValueCheck---",response);
+      console.log("---loginValueCheck---", response);
     });
     setPostList(fullPostData);
     // console.log("---fullPostData.length---", fullPostData[2]);
@@ -208,11 +208,15 @@ function PetList({
                 }}
                 delay={200}
               >
+                {console.log(
+                  "item?.cover_image[0]?.image_url.... ",
+                  item?.cover_image[0]?.image_url
+                )}
+
                 <ImageBackground
                   source={
                     petImages &&
-                    petImages?.post.length &&
-                    petImages?.post[index]?.cover_image.length
+                    petImages?.post.length 
                       ? {
                           uri: item?.cover_image[0]?.image_url,
                         }
@@ -227,8 +231,8 @@ function PetList({
                       // top: width / 4,
                       justifyContent: "flex-start",
                       alignItems: "flex-end",
-                      bottom:3,
-                      position:'absolute'
+                      bottom: 3,
+                      position: "absolute",
                     }}
                   >
                     <View
